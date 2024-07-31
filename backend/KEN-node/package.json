@@ -1,0 +1,22 @@
+{
+  "name": "ken-node",
+  "version": "1.0.0",
+  "description": "KEN AI nodejs app root",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Berkan Mertan",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "gtts": "^0.2.1",
+    "nodemailer": "^6.9.14",
+    "sound-play": "^1.1.0"
+  }
+}
