@@ -1,0 +1,62 @@
+{
+  "_from": "wolfram-alpha-wrapper",
+  "_id": "wolfram-alpha-wrapper@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-27/CXJN9EU8rxvkvkXuk5IA77Vw=",
+  "_location": "/wolfram-alpha-wrapper",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "wolfram-alpha-wrapper",
+    "name": "wolfram-alpha-wrapper",
+    "escapedName": "wolfram-alpha-wrapper",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/wolfram-alpha-wrapper/-/wolfram-alpha-wrapper-0.1.0.tgz",
+  "_shasum": "dbbfc25c937d114f2bc6f92f917ba4e4803bed5c",
+  "_spec": "wolfram-alpha-wrapper",
+  "_where": "C:\\Berkan",
+  "author": {
+    "name": "tmalbonph@yahoo.com"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/tmalbonph/wolfram-alpha-wrapper/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "xml2js": "^0.4.5"
+  },
+  "deprecated": false,
+  "description": "WolframAlpha NodeJS Wrapper",
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-mocha-test": "~0.7.0",
+    "jshint-stylish": "~0.1.3",
+    "load-grunt-tasks": "~0.2.0",
+    "mocha": "~1.17.1",
+    "time-grunt": "~0.1.1"
+  },
+  "homepage": "https://gitlab.com/tmalbonph/wolfram-alpha-wrapper#readme",
+  "keywords": [
+    "WolframAlpha"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "wolfram-alpha-wrapper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/tmalbonph/wolfram-alpha-wrapper.git"
+  },
+  "scripts": {
+    "test": "mocha -b test -u tdd  -R spec"
+  },
+  "version": "0.1.0"
+}
