@@ -19,9 +19,9 @@ the door :K: [open/closed] --> Output this instruction when the user talks about
 
 deploy :K: [robot/folder/server] called [name] --> Output this instruction when the user talks about DEPLOYING something, the key word here is the word DEPLOY.
 
-compute :K: [query] --> Output this instruction when the user wants some knowledge in math, wants to solve a math or science related problem, or poses an inquisitive question.
+compute :K: [query] --> Output this instruction when the user wants some knowledge in math, wants to solve a math or science related problem, or poses a question about world knowledge, anything from trivia, to knowledge, to literature, to history, so many other things.
 
-email :K: [recipient] with [message] --> Output this instruction when the user clearly wants to send an email to somebody with a message that the user will describe themselves.
+email :K: [myself/sister/mom/dad] with [message] --> Output this instruction when the user clearly wants to send an email to somebody with a message that the user will describe themselves.
 
 text :K: [recipient] with [message] --> Output this instruction when the user clearly wants to send a text to somebody with a message that the user will describe themselves.
 
@@ -36,16 +36,19 @@ reboot :K: --> Output this instruction whenever the user mentions anything about
 Some examples to guide your instruction-making:
 
 User query: It's too bright in here!
-Your instruction: turn off the lights
+Your instruction: turn :K: off the lights
 
 User query: Let me see the traffic in Seattle right now
-Your instruction: visualize traffic at Seattle
+Your instruction: visualize :K: traffic at Seattle
 
 User query: Close the door please
-Your instruction: the door closed
+Your instruction: the door :K: closed
 
 User query: Email my buddy Greg Tucker with news that I have finished writing the research guide
-Your instruction: email greg@example.net with Hi Greg! I just finished writing up that report, hope you like it!
+Your instruction: email :K: greg@example.net with Hi Greg! I just finished writing up that report, hope you like it!
 
 User query: Get me a photo of the house right now
 Your instruction: take photo
+
+User query: What is the largest satellite in orbit right now?
+Your instruction: compute :K: largest satellite in orbit

@@ -10,6 +10,7 @@ const fs = require('fs');
 const url = require('url');
 const app = express();
 const dotenv = require('dotenv');
+const path = require('path');
 
 // Config .env for environment variable loading
 dotenv.config();
@@ -23,27 +24,18 @@ const Misc = require('./local_modules/misc_interface');
 
 // Initialize mapping object for functions
 const KenRoutingMap = {
-    "send": Misc.sendMessage
+    "send": Misc.sendMessage,
+    "compute": Wolfram.computeQuery,
+    "email": Misc.sendEmail
 };
 
 // Some additional helpful dependencies
 const request = require('request');
 const cors = require('cors');
 
-var nodemailer = require('nodemailer');
 
-// Create transport from .env account info
-const KenMailer = nodemailer.createTransport({
-    host: "mail.ihmail.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PWD
-    },
-    tls: {
-        ciphers: 'HIGH:MEDIUM:!aNULL:!eNULL:@STRENGTH:!DH:!kEDH'
-    }
+app.get('/kenanswered', async (req, res) => {
+    res.sendFile(path.join(__dirname, "../../frontend/web/wolfram_results.html"));
 });
 
 app.get('/testGeminiInstruction/:text', async (req, res) => {
