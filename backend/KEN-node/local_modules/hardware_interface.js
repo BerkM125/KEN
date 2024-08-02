@@ -15,12 +15,18 @@ async function flipLights (lightState) {
             }
 
             let successMessage = `Light flipped ${lightState}`;
-            
+
             console.log(successMessage);
             Media.generateSpeech(successMessage);
         });
 }
 
+// REBOOT THE MACHINE
+async function hardReboot () {
+    console.log("OH IM DEFINITELY REBOOTING THE SYSTEM NOW...");
+}
+
 module.exports = {
+    hardReboot,
     flipLights
 };

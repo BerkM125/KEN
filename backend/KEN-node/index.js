@@ -21,12 +21,14 @@ const Media = require('./local_modules/media');
 const Wolfram = require('./local_modules/wolfram_interface');
 const Gemini = require('./local_modules/gemini_interface');
 const Misc = require('./local_modules/misc_interface');
+const Hard = require('./local_modules/hardware_interface');
 
 // Initialize mapping object for functions
 const KenRoutingMap = {
     "send": Misc.sendMessage,
     "compute": Wolfram.computeQuery,
-    "email": Misc.sendEmail
+    "email": Misc.sendEmail,
+    "reboot": Hard.hardReboot
 };
 
 // Some additional helpful dependencies
