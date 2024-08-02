@@ -28,7 +28,9 @@ const KenRoutingMap = {
     "send": Misc.sendMessage,
     "compute": Wolfram.computeQuery,
     "email": Misc.sendEmail,
-    "reboot": Hard.hardReboot
+    "reboot": Hard.hardReboot,
+    "turn": Hard.flipLights,
+    "light colored": Hard.changeLights
 };
 
 // Some additional helpful dependencies
@@ -65,8 +67,8 @@ app.post('/speech/:text', async (req, res) => {
     let raw_instructions = await Gemini.convertLanguageToInstruction(NLQuery);
 
     let instruction = await raw_instructions.response.text();
-    let routingKey = instruction.split(":K:")[0];
-    let routingArgs = instruction.split(":K:")[1];
+    let routingKey = instruction.split(" :K: ")[0];
+    let routingArgs = instruction.split(" :K: ")[1];
 
     console.log("GENERATED INSTRUCTION: " + instruction);
     console.log("ROUTING FUNCTION FOR KEY " + routingKey);
@@ -94,5 +96,12 @@ app.listen(process.env.KEN_SERVER_PORT, async () => {
         });
     });
 
+});
+
+// Generic file get
+app.get('*', (req, res) => {
+    let fPath = url.parse(req.url, true);
+    let fn = "." + fPath.pathname;
+    res.sendFile(path.join(__dirname, fn));
 });
 

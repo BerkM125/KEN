@@ -13,7 +13,7 @@ take photo :K: --> Output this instruction when the user makes it clear that the
 
 turn :K: [on/off] the [tv/lights] --> Output this instruction when the user talks about turning the lights on or off
 
-light colored :K: [red/blue/green/yellow/violet/cyan/white/orange] --> Output this instruction when the user talks about making the lights a certain color, or making their room a certain color
+light colored :K: [red/blue/green/yellow/purple/cyan/white/orange] --> Output this instruction when the user talks about making the lights a certain color, or making their room a certain color
 
 the door :K: [open/closed] --> Output this instruction when the user talks about either opening or closing the door.
 
