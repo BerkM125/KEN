@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Indie+Flower&family=Poppins:wght@300&display=swap');
+
+h1,h2,h3 {
+    font-family: 'Indie Flower', cursive;
+    color: rgb(70, 70, 70);
+}
+
+body {
+    zoom: 70%;
+    background-color: #cafcf5;
+}
+
+#waterblock {
+    width: 420px;
+    margin-bottom: 40px;
+    margin-top: ;
+}
+
+#temperatureblock {
+    width: 460px;
+}
+
+#tempimg {
+    float:right;
+    width:120px;
+    display: none;
+}
+
+#plantimg {
+    display: none;
+    float: right;
+    width: 200px;
+}
+
+#imageblock {
+    float:right;
+    height: 350px;
+    width: 360px;
+    bottom: 450px;
+    top:100px;
+    left: 390px;
+    z-index: -1;
+    position: fixed;
+}
+
+.icons {
+    margin-right:30px;
+    margin-left: 20px;
+    width:100px;
+    float:left;
+}
+#plantcanvas {
+    margin-top:50px;
+    margin-left:50px;
+    float:left;
+}

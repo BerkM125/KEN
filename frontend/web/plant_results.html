@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en" dir="ltr"></html>
+    <head>
+        <title>Plant Status</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="UX/plantstyle.css"/>
+    </head>
+
+    <body>
+        <h1 style="margin-left:20px; margin-top:30px;">Bamboo Plant Status</h1> 
+        <div style="display:inline-block; vertical-align: top; width:900px;"> 
+            <div style="display:inline-block;"> 
+                <div id="waterblock">
+                    <img class="icons" style="display:inline" src="res/img/plantimages/droplet.gif"/>
+                    <h3 id="waterlvl">ADC Water Level: </h3> 
+                    <h3>ADC Port: ADC0</h3> 
+                    <h3 id="waterrating">ADC Water Rating: </h3>
+                </div>
+                
+                <div id="temperatureblock">
+                    <img class="icons" style="display:inline" src="res/img/plantimages/weather1.gif"/>
+                    <h3 id="temperature">DHT11 Temperature: </h3>
+                    <h3 id="humidity">DHT11 Humidity: </h3>
+                    <h3 id="temprating">DHT11 Temperature Rating: </h3>
+                </div>
+            </div> 
+            <div id="imageblock">
+                <img id="tempimg" src="res/img/plantimages/neutral.png"/> 
+                <img id="plantimg" src="res/img/plantimages/excellent.png"/> 
+                <img id="droplet" style="display:none;" src="res/img/plantimages/droplet.gif"/>
+                <img id="thermometer" style="display:none;" src="res/img/plantimages/thermometer.gif"/>
+            </div>
+            <canvas id="plantcanvas" width="400" height="500">
+
+            </canvas>
+        </div>
+
+        <script src="scripts/plantscript.js"></script>
+        <script src="scripts/canvasmain.js"></script>
+    </body>
+</html>
