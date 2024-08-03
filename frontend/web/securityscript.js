@@ -32,8 +32,8 @@ setInterval(function() {
         popularmodal.style.marginLeft = '267px';
         block1.style.marginLeft = '260px';
 
-        block2.style.height = '80%';
-        block1.style.height = '80%';
+        block2.style.height = '100%';
+        block1.style.height = '100%';
         block2.style.width = '37%';
         block1.style.width = '37%';
         block2.style.marginLeft = `${block1.getBoundingClientRect().width + block1.offsetLeft+30}px`;
@@ -46,7 +46,7 @@ setInterval(function() {
         popularmodal.style.marginLeft = '90px';
         block1.style.marginLeft = '90px';
         block2.style.height = '55%';
-        block1.style.height = '45%';
+        block1.style.height = '100%';
         block2.style.width = '87%';
         block1.style.width = '90%';
         block2.style.marginLeft = `${block1.offsetLeft}px`;
