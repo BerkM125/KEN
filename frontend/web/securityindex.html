@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Security Home</title>
+        <link rel="stylesheet" href="securitystyle.css"/>
+        <link rel="icon" href="images/securityicon1.png" type="image/x-icon"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+    </head>
+    <body>
+        <div class="s-layout">
+            <div class="s-layout__sidebar">
+                <header>
+                    <img id="logoid" style="display: inline;" src="images/homealarm.png" style="height:65px;"/>
+                </header>
+                <nav class="s-sidebar__nav">
+                    <ul>
+                        <li>
+                        <a class="s-sidebar__nav-link" href="#securityhome" onmouseleave="leavefunc('hometext', 'homeimg', 'images/home.png')" onclick="showstats()" onmouseover="hoverfunc('hometext', 'homeimg', 'images/homeanimated.gif')">
+                            <img class="menuicon" id="homeimg" style="height: 25px;" src="images/home.png"/><em id="hometext">Home</em>
+                        </a>
+                        </li>
+                        <li>
+                        <a class="s-sidebar__nav-link" href="#footagepage" onmouseleave="leavefunc('footagetext', 'footageimg', 'images/album.png')" onclick="showfootage()" onmouseover="hoverfunc('footagetext', 'footageimg', 'images/albumanimated.gif')">
+                            <img class="menuicon" id="footageimg" style="height: 25px;" src="images/album.png"/><em id="footagetext">Gallery</em>
+                        </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Content -->
+
+            <main class="s-layout__content">
+                <div id="popularmodal" class="modal" style="display:none; border:none;box-shadow:none; width:95%;margin-top:110px;z-index:9999;">
+                    <div id="popularmodalcontent" class="modal-content" style="border:none;box-shadow:none;">
+                      <h3><img style="display: inline; margin-bottom:8px; margin-right:5px;" src="images/popularicon.png"/>Footage</h3>
+
+                      <div id="popularmodalitems">
+                        <img id="recentimg" style="width:50%;" src="mostrecent.jpg"/>
+                      </div>
+                    </div>
+                </div>
+                <div id="block1" class="modal" style="display:block; border:none;box-shadow:none;">
+                    <div id="block1content" class="modal-content" style="border:none;box-shadow:none;">
+                      <h2 id="detectioncount">Capture Count: </h2>
+                      <h3 id="suspicioncount">Suspicious Activity: </h3>
+                      <h3 id="latestactivity">Latest Active Timestamp: </h3>
+                      <h3 id="locationdata">Latest Active Location:</h3>
+                      <div>
+                        <h2>Capture Options: </h2>
+                        <button id="capturebtn" onclick="takepic(); setTimeout(gatherdata, 2000);">Take Photo</button>
+                        <div style="width:150px; font-size: 18px;">
+                            <input type="radio" id="option1" name="camoption" value="203" checked>
+                            <label for="option1">Camera 1 (203)</label>
+                            
+                            <input type="radio" id="option2" name="camoption" value="236">
+                            <label for="option2">Camera 2 (236)</label>
+                        </div>
+                        
+  
+                      </div>
+                    </div>
+                </div>
+                <div id="block2" class="modal" style="display:block; box-shadow:none;border:none;">
+                    <div id="block2content" class="modal-content" style="border:none;box-shadow:none;">
+                      <!--<h2>Detection Model</h2>
+                      <img style="width:75%;border: 2px solid #555; border-radius:15px" src="images/model1.PNG"/>-->
+                    </div>
+                </div>
+            </main>
+
+            <script src="securityscript.js"></script>
+            
+        </div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

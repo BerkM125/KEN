@@ -6,6 +6,15 @@
 const axios = require('axios');
 const Media = require('./media');
 const fs = require('fs');
+const { exec } = require('child_process');
+
+var securitydata = {
+    "0": 0,
+    "detectioncount": 0,
+    "suspicioncount": 0,
+    "latestactivity": "12h00",
+    "latestlocation": "Room 1"
+};
 
 // Color keywords
 async function includesColor (string) {
@@ -69,10 +78,10 @@ function ipCameraCapture (ipAddress) {
     });*/
 
     
-    exec(`curl -o ../SHARED/roomcapture-${stamp}.jpg http://192.168.1.${ipAddress}:80/capture`, function(err) {
+    exec(`curl -o ../../frontend/web/SHARED/roomcapture-${stamp}.jpg http://192.168.1.${ipAddress}:80/capture`, function(err) {
         if(err) throw err
         else {
-            exec(`cp ../SHARED/roomcapture-${stamp}.jpg mostrecent.jpg`, function(err) {
+            exec(`cd ../../frontend/web/SHARED/ && copy "roomcapture-${stamp}.jpg" "../mostrecent.jpg"`, function(err) {
                 if(err) throw err;
                 //only for detecting humans
                 /*else {
@@ -102,5 +111,6 @@ module.exports = {
     flipLights,
     ipCameraCapture,
     getBypassMixed,
-    changeLights
+    changeLights,
+    securitydata
 };

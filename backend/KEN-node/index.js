@@ -107,6 +107,37 @@ app.get('/bypassmixed/:ipcode/:bypasstext', (req, response) => {
     
 });
 
+// Direct access of certain data, including that of devices on private network
+app.get('/directget/:text', (req, res) => {
+    let date = new Date();
+    let data = req.params.text.toString();
+
+    if(data.includes("capture")) {
+        Hard.ipCameraCapture(203);
+        
+        res.writeHead(200, "text/html");
+        res.write("success!");
+        console.log("Taking picture...");
+        //generateSpeech(`Photo captured, reported area: ${securitydata.latestlocation}`);
+    }
+    else if(data.includes("alert")) {
+        let stamp = `${date.getHours()}H${date.getMinutes()}M${date.getSeconds()}S`;
+        Hard.securitydata.detectioncount += 1;
+        Hard.securitydata.suspicioncount += 1;
+        Hard.securitydata.latestlocation = "HOUSE AREA";
+        Hard.securitydata.latestactivity = stamp;
+        
+        res.writeHead(200, "text/html");
+        res.write("success!");
+        Media.generateSpeech(`Security alert, reported area: ${Hard.securitydata.latestlocation}`);
+    }
+    else {
+        res.writeHead(200, "text/html");
+        res.write((Hard.securitydata[data]).toString());
+    }
+    return res.end();
+});
+
 // MAKE SURE EXPRESS APP USES BOTH CORS AND ALLOWS FOR JSON DATA TRANSMISSION
 app.use(cors()).use(express.json());
 
