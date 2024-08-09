@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1em;
+        }
+        input[type="text"] {
+            padding: 0.5em;
+            width: 300px;
+            font-size: 1em;
+        }
+        button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" id="question" placeholder="Type your question here...">
+        </div>
+        <button onclick="sendQuestion()">ASK!</button>
+    </div>
+
+    <script>
+        document.getElementById('question').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendQuestion();
+            }
+        });
+
+        function sendQuestion() {
+            const question = document.getElementById('question').value;
+            if (question.trim() === '') {
+                alert('Please enter a question.');
+                return;
+            }
+
+            const origin = window.location.origin;
+            const url = `${origin}/speech/${encodeURIComponent(question)}`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Question submitted successfully!');
+            });
+        }
+    </script>
+</body>
+</html>
